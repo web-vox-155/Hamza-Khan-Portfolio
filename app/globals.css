@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #101426;
+  --foreground: #eef1ff;
+  --muted: #b1b9d8;
+  --border: #3a4265;
+  --card: rgba(38, 45, 78, 0.45);
+  --card-border: rgba(151, 165, 214, 0.2);
+  --accent: #c7d2fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(129, 140, 248, 0.14), transparent 28rem),
+    radial-gradient(circle at 90% 30%, rgba(125, 211, 252, 0.09), transparent 26rem),
+    var(--background);
+  color: var(--foreground);
+  /* REMOVED: font-family: Arial... */
+  /* Geist font is applied via layout.tsx className */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(165, 180, 252, 0.35);
+  color: #f8fafc;
+}
+
+@media (pointer: coarse) {
+  .hide-on-coarse {
+    display: none !important;
+  }
+}
+
+@keyframes loading {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(0%); }
+}
+
+/* Muted indigo palette for existing Tailwind utilities. */
+.text-white { color: #f1f5ff; }
+.text-zinc-200 { color: #e2e8ff; }
+.text-zinc-300 { color: #cbd5f5; }
+.text-zinc-400 { color: #aeb9da; }
+.text-zinc-500 { color: #8f9ac0; }
+.text-zinc-600 { color: #7781a8; }
+.border-zinc-800 { border-color: rgba(73, 84, 125, 0.72); }
+.border-zinc-700 { border-color: rgba(105, 119, 166, 0.72); }
+.border-zinc-600 { border-color: rgba(151, 165, 214, 0.72); }
+.border-zinc-500 { border-color: rgba(183, 196, 240, 0.72); }
+[class~="bg-zinc-900/60"] { background-color: rgba(30, 38, 70, 0.68); }
+[class~="bg-zinc-900/40"] { background-color: rgba(30, 38, 70, 0.48); }
+[class~="bg-zinc-900/30"] { background-color: rgba(30, 38, 70, 0.4); }
+[class~="bg-zinc-900/20"] { background-color: rgba(30, 38, 70, 0.3); }
+[class~="bg-zinc-900/40"]:hover { background-color: rgba(45, 55, 94, 0.52); }
+.bg-zinc-800 { background-color: rgba(56, 66, 105, 0.72); }
