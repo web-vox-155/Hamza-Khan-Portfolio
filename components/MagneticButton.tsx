@@ -15,6 +15,7 @@ export default function MagneticButton({
   children,
   className = "",
   onClick,
+  href,
   type = "button",
 }: MagneticButtonProps) {
   const x = useMotionValue(0);
