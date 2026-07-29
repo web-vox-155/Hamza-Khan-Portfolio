@@ -1,0 +1,15 @@
+
+> my-next-website@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://0.0.0.0:3000
+✓ Ready in 3.7s
+Creating turbopack project { dir: 'C:\\Users\\Ameet Computer\\my-next-website', testMode: true }
+⚠ Slow filesystem detected. The benchmark took 373ms. If C:\Users\Ameet Computer\my-next-website\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+
+○ Compiling / ...
+ GET / 200 in 38.8s (next.js: 33.1s, application-code: 5.7s)
+ GET / 200 in 522ms (next.js: 22ms, application-code: 500ms)

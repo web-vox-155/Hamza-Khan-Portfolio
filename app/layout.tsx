@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import NoiseOverlay from "../components/NoiseOverlay";
 import ScrollProgress from "../components/ScrollProgress";
 import "./globals.css";
-
-const geist = Geist({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geist.className}>
+      <body className={GeistSans.className}>
         <NoiseOverlay />
         <ScrollProgress />
         {children}

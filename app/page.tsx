@@ -19,26 +19,28 @@ export default function Home() {
       <main className="relative z-10 min-h-screen bg-transparent text-white pt-24">
         <ScrollButtons />
         {/* ───────── Hero ───────── */}
-        <section className="mx-auto max-w-6xl px-6 py-32">
+        <section className="relative mx-auto max-w-6xl overflow-hidden px-6 py-32">
+          <div className="hero-aurora" aria-hidden="true" />
+          <div className="hero-grid" aria-hidden="true" />
           <FadeIn>
-            <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-2 text-sm text-zinc-300">
+            <div className="relative inline-flex items-center gap-2 rounded-full border border-zinc-700/80 bg-slate-950/55 px-4 py-2 text-sm text-zinc-300 shadow-2xl shadow-indigo-500/10 backdrop-blur-xl">
               <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
               Available for freelance projects
             </div>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mt-8 max-w-4xl">
-              <p className="text-sm uppercase tracking-[0.35em] text-zinc-500">
+            <div className="relative mt-8 max-w-5xl">
+              <p className="text-sm uppercase tracking-[0.35em] text-cyan-200/70">
                 <TypewriterText
                   words={["Full-Stack Developer & UI/UX Designer"]}
-                  className="font-semibold uppercase tracking-[0.35em] text-zinc-500"
+                  className="font-semibold uppercase tracking-[0.35em] text-cyan-200/70"
                 />
               </p>
-              <h1 className="mt-4 text-5xl font-black leading-[1.1] md:text-7xl lg:text-8xl">
-                <TextReveal text="Building modern\ndigital experiences" />
+              <h1 className="mt-5 text-5xl font-black leading-[0.98] md:text-7xl lg:text-8xl">
+                <TextReveal lines={["Building modern", "digital experiences"]} />
               </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-300">
+              <p className="mt-9 max-w-2xl text-lg leading-8 text-zinc-300">
                 I&apos;m <span className="font-semibold text-white">Hamza Khan</span>.
                 I design and build fast, interactive, and visually polished web
                 applications with clean architecture, responsive design, and
