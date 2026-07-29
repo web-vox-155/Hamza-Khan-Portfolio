@@ -104,20 +104,22 @@ export default function Home() {
                 <div className="mt-8 space-y-5 text-zinc-300">
                   <p className="leading-8">
                     I&apos;m <span className="font-semibold text-white">Hamza Khan</span>,
-                    a full-stack web developer and UI/UX designer focused on
-                    creating modern, high-performance, and visually engaging web
-                    applications.
+                    a full-stack developer who designs, builds, and ships complete
+                    web applications — not just interfaces, the whole system behind
+                    them.
                   </p>
                   <p className="leading-8">
-                    I specialize in end-to-end product development — from wireframes
-                    and design systems to scalable backend architecture and
-                    deployment. My work emphasizes clean code, smooth interactions,
-                    and pixel-perfect execution.
+                    My most recent build is a production full-stack platform with
+                    real authentication, a live PostgreSQL database, complete
+                    CRUD workflows, and drag-and-drop interactions — designed,
+                    built, and deployed end to end, by me, on my own.
                   </p>
                   <p className="leading-8">
-                    Whether you need a landing page that converts, a complex
-                    dashboard, or a full SaaS application, I bring both the design
-                    vision and the technical skills to ship it.
+                    I care about the details that separate a demo from a real
+                    product: data that actually persists, auth that&apos;s actually
+                    secure, and interfaces that feel deliberate rather than
+                    templated. If you need something built and shipped, not just
+                    mocked up, that&apos;s the work I do.
                   </p>
                 </div>
               </div>
@@ -177,26 +179,25 @@ export default function Home() {
               <FadeIn delay={0.3}>
                 <div className="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">Currently Leveling Up</h3>
-                    <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-300">
-                      In Progress
+                    <h3 className="text-xl font-semibold">Recently Shipped</h3>
+                    <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+                      Live
                     </span>
                   </div>
                   <div className="mt-5 space-y-3">
                     {[
-                      { name: "Advanced Node.js / Express", w: "w-4/5" },
-                      { name: "PostgreSQL & Database Design", w: "w-3/5" },
-                    ].map((skill) => (
+                      "Full authentication system with secure sessions",
+                      "Real-time drag-and-drop task management",
+                      "Production PostgreSQL database, deployed live",
+                    ].map((item) => (
                       <div
-                        key={skill.name}
-                        className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-black/20 px-4 py-3"
+                        key={item}
+                        className="flex items-center gap-3 rounded-2xl border border-zinc-800 bg-black/20 px-4 py-3"
                       >
-                        <span className="text-sm">{skill.name}</span>
-                        <div className="h-2 w-24 overflow-hidden rounded-full bg-zinc-800">
-                          <div
-                    className={`h-full rounded-full bg-indigo-200 ${skill.w} transition-all duration-1000`}
-                          />
-                        </div>
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-xs text-emerald-300">
+                          ✓
+                        </span>
+                        <span className="text-sm text-zinc-200">{item}</span>
                       </div>
                     ))}
                   </div>
