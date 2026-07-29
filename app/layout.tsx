@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Hamza Khan | Full-Stack Developer",
     description:
       "Modern web applications, interactive interfaces, and scalable development.",
-    url: "https://your-domain.com",
+    url: "https://hamza-khan-portfolio-zeta.vercel.app",
     siteName: "Hamza Khan Portfolio",
     locale: "en_US",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "Modern web applications, interactive interfaces, and scalable development.",
   },
 
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://hamza-khan-portfolio-zeta.vercel.app"),
 };
 
 export default function RootLayout({

@@ -383,29 +383,29 @@ export default function Home() {
 
                   <div className="mt-8 space-y-4">
                     <a
-                      href="mailto:hamza@example.com"
+                      href="mailto:ainature155@gmail.com"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
                       <span className="rounded-lg border border-zinc-700 p-2 text-sm">✉</span>
-                      hamza@example.com
+                      ainature155@gmail.com
                     </a>
                     <a
-                      href="https://github.com/yourusername"
+                      href="https://github.com/web-vox-155"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
                       <span className="rounded-lg border border-zinc-700 p-2 text-sm">⌘</span>
-                      github.com/yourusername
+                      github.com/web-vox-155
                     </a>
                     <a
-                      href="https://linkedin.com/in/yourusername"
+                      href="https://www.linkedin.com/in/hamza-khan-36172a377"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
                       <span className="rounded-lg border border-zinc-700 p-2 text-sm">in</span>
-                      linkedin.com/in/yourusername
+                      linkedin.com/in/hamza-khan
                     </a>
                   </div>
                 </div>

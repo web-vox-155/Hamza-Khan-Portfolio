@@ -74,10 +74,10 @@ export default function Navbar() {
             </nav>
 
             <a
-              href="/resume.pdf"
+              href="#contact"
               className="hidden md:block rounded-lg bg-indigo-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-indigo-400/15 transition hover:bg-indigo-300"
             >
-              Resume
+              Hire Me
             </a>
 
             <button
@@ -109,11 +109,11 @@ export default function Navbar() {
                   </a>
                 ))}
                 <a
-                  href="/resume.pdf"
+                  href="#contact"
                   onClick={() => setOpen(false)}
                   className="mt-2 rounded-lg bg-indigo-400 px-3 py-3 text-center text-sm font-semibold text-slate-950"
                 >
-                  Download Resume
+                  Hire Me
                 </a>
               </div>
             </div>

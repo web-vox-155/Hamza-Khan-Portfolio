@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 text-sm">
             <div className="flex flex-wrap gap-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/web-vox-155"
                 target="_blank"
                 rel="noreferrer"
                 className="text-zinc-400 transition hover:text-white"
@@ -26,7 +26,7 @@ export default function Footer() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/hamza-khan-36172a377"
                 target="_blank"
                 rel="noreferrer"
                 className="text-zinc-400 transition hover:text-white"
@@ -34,7 +34,7 @@ export default function Footer() {
                 LinkedIn
               </a>
               <a
-                href="mailto:hamza@example.com"
+                href="mailto:ainature155@gmail.com"
                 className="text-zinc-400 transition hover:text-white"
               >
                 Email
