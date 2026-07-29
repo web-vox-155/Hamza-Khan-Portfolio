@@ -9,14 +9,16 @@ export default function Background() {
   const springX = useSpring(mouseX, { stiffness: 40, damping: 20, mass: 1 });
   const springY = useSpring(mouseY, { stiffness: 40, damping: 20, mass: 1 });
 
-  const orb1X = useTransform(springX, [-1, 1], [-30, 30]);
-  const orb1Y = useTransform(springY, [-1, 1], [-20, 20]);
-  const orb2X = useTransform(springX, [-1, 1], [40, -40]);
-  const orb2Y = useTransform(springY, [-1, 1], [25, -25]);
-  const orb3X = useTransform(springX, [-1, 1], [-20, 20]);
-  const orb3Y = useTransform(springY, [-1, 1], [30, -30]);
-  const gridX = useTransform(springX, [-1, 1], [10, -10]);
-  const gridY = useTransform(springY, [-1, 1], [10, -10]);
+  const orb1X = useTransform(springX, [-1, 1], [-40, 40]);
+  const orb1Y = useTransform(springY, [-1, 1], [-30, 30]);
+  const orb2X = useTransform(springX, [-1, 1], [50, -50]);
+  const orb2Y = useTransform(springY, [-1, 1], [35, -35]);
+  const orb3X = useTransform(springX, [-1, 1], [-30, 30]);
+  const orb3Y = useTransform(springY, [-1, 1], [40, -40]);
+  const orb4X = useTransform(springX, [-1, 1], [25, -25]);
+  const orb4Y = useTransform(springY, [-1, 1], [-25, 25]);
+  const gridX = useTransform(springX, [-1, 1], [12, -12]);
+  const gridY = useTransform(springY, [-1, 1], [12, -12]);
 
   useEffect(() => {
     function handleMove(e: MouseEvent) {
@@ -31,41 +33,48 @@ export default function Background() {
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-[#050505]">
-      {/* Deep base gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(99,102,241,0.10),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.18),transparent_55%)]" />
 
-      {/* Slow-drifting large orb - purple */}
+      {/* Vivid indigo/violet orb - top left */}
       <motion.div
-        className="absolute left-[-15%] top-[-15%] h-[620px] w-[620px] rounded-full bg-indigo-500/10 blur-[130px]"
+        className="absolute left-[-15%] top-[-15%] h-[640px] w-[640px] rounded-full bg-indigo-500/30 blur-[110px]"
         style={{ x: orb1X, y: orb1Y }}
-        animate={{ scale: [1, 1.08, 1] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ scale: [1, 1.12, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Slow-drifting large orb - cyan */}
+      {/* Vivid cyan orb - top right */}
       <motion.div
-        className="absolute right-[-15%] top-[15%] h-[560px] w-[560px] rounded-full bg-sky-400/10 blur-[130px]"
+        className="absolute right-[-15%] top-[10%] h-[580px] w-[580px] rounded-full bg-cyan-400/28 blur-[110px]"
         style={{ x: orb2X, y: orb2Y }}
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      {/* Slow-drifting large orb - violet, lower */}
+      {/* Vivid magenta/pink orb - bottom left */}
       <motion.div
-        className="absolute bottom-[-20%] left-[20%] h-[680px] w-[680px] rounded-full bg-violet-500/10 blur-[150px]"
+        className="absolute bottom-[-20%] left-[15%] h-[700px] w-[700px] rounded-full bg-fuchsia-500/24 blur-[130px]"
         style={{ x: orb3X, y: orb3Y }}
-        animate={{ scale: [1, 1.06, 1] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.95, 0.6] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      {/* Perspective grid floor - the "3D" depth cue */}
+      {/* Vivid emerald orb - bottom right, smaller accent */}
       <motion.div
-        className="absolute inset-x-0 bottom-0 h-[60vh] opacity-[0.15]"
+        className="absolute bottom-[5%] right-[10%] h-[420px] w-[420px] rounded-full bg-emerald-400/22 blur-[100px]"
+        style={{ x: orb4X, y: orb4Y }}
+        animate={{ scale: [1, 1.18, 1], opacity: [0.5, 0.9, 0.5] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+      />
+
+      {/* Perspective grid floor - brighter now */}
+      <motion.div
+        className="absolute inset-x-0 bottom-0 h-[60vh] opacity-[0.22]"
         style={{
           x: gridX,
           y: gridY,
           backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.5) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
           maskImage: "linear-gradient(to top, black, transparent)",
           WebkitMaskImage: "linear-gradient(to top, black, transparent)",
@@ -74,18 +83,16 @@ export default function Background() {
         }}
       />
 
-      {/* Fine dot texture, subtle */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)",
+            "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
 
-      {/* Vignette to keep focus centered */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_40%,#050505_95%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_35%,#050505_92%)]" />
     </div>
   );
 }
