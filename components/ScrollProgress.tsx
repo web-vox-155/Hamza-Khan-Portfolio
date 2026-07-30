@@ -1,10 +1,19 @@
 "use client";
 
-import { motion, useSpring, useScroll } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 
+/**
+ * Scroll progress indicator bar at the top of the page.
+ * Optimized with lighter spring physics.
+ */
 export default function ScrollProgress() {
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
+  const scaleX = useSpring(scrollYProgress, { stiffness: 80, damping: 30 });
+
+  if (reduceMotion) {
+    return null;
+  }
 
   return (
     <motion.div

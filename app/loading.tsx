@@ -7,7 +7,7 @@ export default function Loading() {
         <div className="h-1 w-48 overflow-hidden rounded-full bg-white/10">
           <div
             className="h-full w-1/2 bg-white"
-            style={{ animation: "loading 1.6s ease-in-out infinite" }}
+            style={{ animation: "loading 1.1s ease-in-out infinite" }}
           />
         </div>
       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import NoiseOverlay from "../components/NoiseOverlay";
 import ScrollProgress from "../components/ScrollProgress";
+import ThreeBackground from "../components/ThreeBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         <NoiseOverlay />
         <ScrollProgress />
+        <ThreeBackground />
         {children}
       </body>
     </html>

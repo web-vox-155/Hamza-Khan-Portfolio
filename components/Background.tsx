@@ -1,97 +1,182 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { useEffect } from "react";
 
+/**
+ * Animated background with ambient light orbs that flow with scroll.
+ * Features:
+ * - Orbs that drift and morph based on scroll position (flowing effect)
+ * - Mouse parallax for subtle interactivity
+ * - Reduced opacity for clear text readability
+ * - Smooth gradient transitions between color themes
+ * - Edge glow walls that pulse with scroll
+ */
 export default function Background() {
+  const reduceMotion = useReducedMotion();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 40, damping: 20, mass: 1 });
-  const springY = useSpring(mouseY, { stiffness: 40, damping: 20, mass: 1 });
+  const springX = useSpring(mouseX, { stiffness: 30, damping: 25, mass: 0.5 });
+  const springY = useSpring(mouseY, { stiffness: 30, damping: 25, mass: 0.5 });
 
+  // Scroll-based animation
+  const { scrollYProgress } = useScroll();
+  const scrollSmooth = useSpring(scrollYProgress, { stiffness: 50, damping: 30, mass: 0.8 });
+
+  // Orb transforms based on scroll + mouse - creates flowing/sliding effect
   const orb1X = useTransform(springX, [-1, 1], [-40, 40]);
   const orb1Y = useTransform(springY, [-1, 1], [-30, 30]);
+  const orb1ScrollX = useTransform(scrollSmooth, [0, 1], [0, 80]);
+  const orb1ScrollY = useTransform(scrollSmooth, [0, 1], [0, -120]);
+
   const orb2X = useTransform(springX, [-1, 1], [50, -50]);
   const orb2Y = useTransform(springY, [-1, 1], [35, -35]);
+  const orb2ScrollX = useTransform(scrollSmooth, [0, 1], [0, -100]);
+  const orb2ScrollY = useTransform(scrollSmooth, [0, 1], [0, -80]);
+
   const orb3X = useTransform(springX, [-1, 1], [-30, 30]);
   const orb3Y = useTransform(springY, [-1, 1], [40, -40]);
-  const orb4X = useTransform(springX, [-1, 1], [25, -25]);
-  const orb4Y = useTransform(springY, [-1, 1], [-25, 25]);
-  const gridX = useTransform(springX, [-1, 1], [12, -12]);
-  const gridY = useTransform(springY, [-1, 1], [12, -12]);
+  const orb3ScrollX = useTransform(scrollSmooth, [0, 1], [0, 60]);
+  const orb3ScrollY = useTransform(scrollSmooth, [0, 1], [0, -160]);
+
+  // Opacity shifts with scroll - keeps text readable
+  const orb1Opacity = useTransform(scrollSmooth, [0, 0.5, 1], [0.20, 0.15, 0.18]);
+  const orb2Opacity = useTransform(scrollSmooth, [0, 0.5, 1], [0.18, 0.22, 0.14]);
+  const orb3Opacity = useTransform(scrollSmooth, [0, 0.5, 1], [0.15, 0.12, 0.20]);
+
+  // Scale pulse with scroll
+  const orb1Scale = useTransform(scrollSmooth, [0, 0.5, 1], [1, 1.15, 0.9]);
+  const orb2Scale = useTransform(scrollSmooth, [0, 0.5, 1], [1, 0.9, 1.1]);
+  const orb3Scale = useTransform(scrollSmooth, [0, 0.5, 1], [1, 1.1, 1.2]);
+
+  // Edge glow pulsing with scroll
+  const edgeGlowOpacity = useTransform(scrollSmooth, [0, 0.3, 0.7, 1], [0.5, 0.3, 0.6, 0.4]);
+  const overlayOpacity = useTransform(scrollSmooth, [0, 0.2, 0.8, 1], [0, 0.08, 0.08, 0]);
 
   useEffect(() => {
+    if (reduceMotion || !window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
+
     function handleMove(e: MouseEvent) {
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = (e.clientY / window.innerHeight) * 2 - 1;
       mouseX.set(x);
       mouseY.set(y);
     }
-    window.addEventListener("mousemove", handleMove);
+
+    window.addEventListener("mousemove", handleMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMove);
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, reduceMotion]);
+
+  if (reduceMotion) {
+    return (
+      <div className="fixed inset-0 z-0 overflow-hidden bg-[#050505]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(129,92,246,0.18),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.14),transparent_24%),radial-gradient(circle_at_10%_90%,rgba(217,70,239,0.14),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_35%,#050505_92%)]" />
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-0 overflow-hidden bg-[#050505]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.18),transparent_55%)]" />
-
-      {/* Vivid indigo/violet orb - top left */}
+      {/* Orb 1 - Purple/Cyan */}
       <motion.div
-        className="absolute left-[-15%] top-[-15%] h-[640px] w-[640px] rounded-full bg-indigo-500/30 blur-[110px]"
-        style={{ x: orb1X, y: orb1Y }}
-        animate={{ scale: [1, 1.12, 1], opacity: [0.7, 1, 0.7] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Vivid cyan orb - top right */}
-      <motion.div
-        className="absolute right-[-15%] top-[10%] h-[580px] w-[580px] rounded-full bg-cyan-400/28 blur-[110px]"
-        style={{ x: orb2X, y: orb2Y }}
-        animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-
-      {/* Vivid magenta/pink orb - bottom left */}
-      <motion.div
-        className="absolute bottom-[-20%] left-[15%] h-[700px] w-[700px] rounded-full bg-fuchsia-500/24 blur-[130px]"
-        style={{ x: orb3X, y: orb3Y }}
-        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 0.95, 0.6] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-
-      {/* Vivid emerald orb - bottom right, smaller accent */}
-      <motion.div
-        className="absolute bottom-[5%] right-[10%] h-[420px] w-[420px] rounded-full bg-emerald-400/22 blur-[100px]"
-        style={{ x: orb4X, y: orb4Y }}
-        animate={{ scale: [1, 1.18, 1], opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-      />
-
-      {/* Perspective grid floor - brighter now */}
-      <motion.div
-        className="absolute inset-x-0 bottom-0 h-[60vh] opacity-[0.22]"
+        className="absolute left-[-10%] top-[-10%] h-[700px] w-[700px] rounded-full"
         style={{
-          x: gridX,
-          y: gridY,
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "linear-gradient(to top, black, transparent)",
-          WebkitMaskImage: "linear-gradient(to top, black, transparent)",
-          transform: "perspective(500px) rotateX(60deg)",
-          transformOrigin: "bottom",
+          x: orb1X,
+          y: orb1Y,
+          translateX: orb1ScrollX,
+          translateY: orb1ScrollY,
+          scale: orb1Scale,
+          opacity: orb1Opacity,
+          background: "radial-gradient(circle, rgba(129,92,246,0.35) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
+      {/* Orb 2 - Cyan/Teal */}
+      <motion.div
+        className="absolute right-[-10%] top-[5%] h-[650px] w-[650px] rounded-full"
+        style={{
+          x: orb2X,
+          y: orb2Y,
+          translateX: orb2ScrollX,
+          translateY: orb2ScrollY,
+          scale: orb2Scale,
+          opacity: orb2Opacity,
+          background: "radial-gradient(circle, rgba(34,211,238,0.30) 0%, transparent 70%)",
+          willChange: "transform",
+        }}
+      />
+      {/* Orb 3 - Pink/Purple */}
+      <motion.div
+        className="absolute bottom-[-15%] left-[10%] h-[750px] w-[750px] rounded-full"
+        style={{
+          x: orb3X,
+          y: orb3Y,
+          translateX: orb3ScrollX,
+          translateY: orb3ScrollY,
+          scale: orb3Scale,
+          opacity: orb3Opacity,
+          background: "radial-gradient(circle, rgba(217,70,239,0.28) 0%, transparent 70%)",
+          willChange: "transform",
         }}
       />
 
-      <div
-        className="absolute inset-0 opacity-[0.08]"
+      {/* Sliding gradient overlay - fades in/out with scroll */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
+          opacity: overlayOpacity,
+          background: "linear-gradient(180deg, transparent 0%, rgba(129,92,246,0.06) 30%, rgba(34,211,238,0.04) 60%, transparent 100%)",
+        }}
+      />
+
+      {/* Side edge lines — pulsing with scroll */}
+      <motion.div
+        className="absolute inset-y-0 left-0 w-32"
+        style={{
+          opacity: edgeGlowOpacity,
+          background: "linear-gradient(to right, rgba(139,92,246,0.5), rgba(34,211,238,0.15) 50%, transparent)",
+        }}
+      />
+      <div
+        className="absolute inset-y-0 left-0 w-px h-full"
+        style={{
+          background: "linear-gradient(to bottom, transparent, rgba(139,92,246,0.6) 20%, rgba(34,211,238,0.6) 50%, rgba(217,70,239,0.6) 80%, transparent)",
+        }}
+      />
+      <motion.div
+        className="absolute inset-y-0 right-0 w-32"
+        style={{
+          opacity: edgeGlowOpacity,
+          background: "linear-gradient(to left, rgba(217,70,239,0.5), rgba(52,211,153,0.15) 50%, transparent)",
+        }}
+      />
+      <div
+        className="absolute inset-y-0 right-0 w-px h-full"
+        style={{
+          background: "linear-gradient(to bottom, transparent, rgba(217,70,239,0.6) 20%, rgba(52,211,153,0.6) 50%, rgba(139,92,246,0.6) 80%, transparent)",
+        }}
+      />
+
+      {/* Subtle dot grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
         }}
       />
 
+      {/* Vignette overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_35%,#050505_92%)]" />
     </div>
   );

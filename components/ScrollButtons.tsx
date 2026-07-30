@@ -1,22 +1,31 @@
-"use client";
+﻿"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 export default function ScrollButtons() {
   const [showTop, setShowTop] = useState(false);
+  const tickingRef = useRef(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  const updateVisibility = useCallback(() => {
+    if (tickingRef.current) return;
+    tickingRef.current = true;
+    requestAnimationFrame(() => {
       const { scrollY, innerHeight } = window;
       const scrollHeight = document.documentElement.scrollHeight;
-      const isAtBottom = scrollY + innerHeight >= scrollHeight - 80;
-      setShowTop(isAtBottom);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+      setShowTop(scrollY + innerHeight >= scrollHeight - 80);
+      tickingRef.current = false;
+    });
   }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      updateVisibility();
+    }
+
+    // Initial check
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [updateVisibility]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

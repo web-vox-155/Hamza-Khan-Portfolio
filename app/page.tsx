@@ -8,6 +8,7 @@ import Services from "../components/Services";
 import TextReveal from "../components/TextReveal";
 import MagneticButton from "../components/MagneticButton";
 import TypewriterText from "../components/TypewriterText";
+import HeroPhoto from "../components/scenes/HeroPhoto";
 import ScrollButtons from "../components/ScrollButtons";
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
       <main className="relative z-10 min-h-screen bg-transparent text-white pt-24">
         <ScrollButtons />
         {/* ───────── Hero ───────── */}
-        <section className="relative mx-auto max-w-6xl overflow-hidden px-6 py-32">
+        <section className="relative mx-auto max-w-6xl px-6 py-32">
+          <HeroPhoto />
           <div className="hero-aurora" aria-hidden="true" />
           <div className="hero-grid" aria-hidden="true" />
           <FadeIn>
@@ -95,7 +97,7 @@ export default function Home() {
         {/* ───────── About ───────── */}
         <Section id="about">
           <div className="grid gap-16 lg:grid-cols-2">
-            <FadeIn>
+            <FadeIn direction="left">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
                   About
@@ -126,7 +128,7 @@ export default function Home() {
             </FadeIn>
 
             <div className="space-y-6">
-              <FadeIn delay={0.1}>
+              <FadeIn direction="right" delay={0.1}>
                 <div className="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6">
                   <h3 className="text-xl font-semibold">Frontend</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
@@ -208,11 +210,13 @@ export default function Home() {
         </Section>
 
         {/* ───────── Services (NEW) ───────── */}
-        <Services />
+        <FadeIn direction="right">
+          <Services />
+        </FadeIn>
 
         {/* ───────── Projects ───────── */}
         <Section id="projects">
-          <FadeIn>
+          <FadeIn direction="left">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
@@ -370,7 +374,7 @@ export default function Home() {
 
         {/* ───────── Contact ───────── */}
         <Section id="contact">
-          <FadeIn>
+          <FadeIn direction="right">
             <div className="rounded-3xl border border-zinc-800 bg-zinc-900/20 p-8 sm:p-12">
               <div className="grid gap-12 lg:grid-cols-2">
                 <div>

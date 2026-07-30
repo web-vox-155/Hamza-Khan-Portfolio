@@ -1,6 +1,6 @@
-"use client";
+﻿"use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -13,27 +13,36 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const tickingRef = useRef(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+  const updateScrollState = useCallback(() => {
+    setScrolled(window.scrollY > 20);
 
-      const sections = navLinks.map((link) => link.href.replace("#", ""));
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 120) {
-            setActiveSection(section);
-            break;
-          }
+    const sections = navLinks.map((link) => link.href.replace("#", ""));
+    for (const section of sections.slice().reverse()) {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 120) {
+          setActiveSection(section);
+          break;
         }
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    }
+    tickingRef.current = false;
   }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (!tickingRef.current) {
+        tickingRef.current = true;
+        requestAnimationFrame(updateScrollState);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [updateScrollState]);
 
   return (
     <header className="fixed top-0 z-50 w-full">
