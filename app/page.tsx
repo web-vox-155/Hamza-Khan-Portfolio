@@ -131,7 +131,7 @@ export default function Home() {
 
             <div className="space-y-6">
               <FadeIn direction="right" delay={0.1}>
-                <div className="rounded-3xl tint-indigo p-6">
+                <div className="rounded-3xl tint-emerald p-6">
                   <h3 className="text-xl font-semibold">Frontend</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
                     {[
@@ -156,7 +156,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <div className="rounded-3xl tint-sky p-6">
+                <div className="rounded-3xl tint-violet p-6">
                   <h3 className="text-xl font-semibold">Backend & Tools</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
                     {[
@@ -236,7 +236,7 @@ export default function Home() {
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
             {/* ── Project 1 ── */}
             <FadeIn delay={0.1}>
-              <article className="group relative overflow-hidden rounded-3xl tint-violet p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl tint-sky p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -282,7 +282,7 @@ export default function Home() {
 
             {/* ── Project 2 ── */}
             <FadeIn delay={0.2}>
-              <article className="group relative overflow-hidden rounded-3xl tint-teal p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl tint-amber p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -328,7 +328,7 @@ export default function Home() {
 
             {/* ── Project 3 ── */}
             <FadeIn delay={0.3}>
-              <article className="group relative overflow-hidden rounded-3xl tint-amber p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl tint-violet p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -377,7 +377,7 @@ export default function Home() {
         {/* ───────── Contact ───────── */}
         <Section id="contact">
           <FadeIn direction="right">
-            <div className="rounded-3xl tint-cyan p-8 sm:p-12">
+            <div className="rounded-3xl tint-emerald p-8 sm:p-12">
               <div className="grid gap-12 lg:grid-cols-2">
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
