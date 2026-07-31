@@ -184,3 +184,94 @@ button {
 [class~="bg-zinc-900/20"] { background-color: rgba(30, 38, 70, 0.3); }
 [class~="bg-zinc-900/40"]:hover { background-color: rgba(45, 55, 94, 0.52); }
 .bg-zinc-800 { background-color: rgba(56, 66, 105, 0.72); }
+
+/* ── Light tint themes for rectangular cards (one color per card) ── */
+.tint-indigo {
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.2), rgba(99, 102, 241, 0.07));
+  border-color: rgba(165, 180, 252, 0.4);
+}
+.tint-indigo:hover {
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.28), rgba(99, 102, 241, 0.12));
+  border-color: rgba(165, 180, 252, 0.6);
+}
+
+.tint-sky {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(14, 165, 233, 0.07));
+  border-color: rgba(125, 211, 252, 0.4);
+}
+.tint-sky:hover {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.26), rgba(14, 165, 233, 0.12));
+  border-color: rgba(125, 211, 252, 0.6);
+}
+
+.tint-emerald {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.18), rgba(16, 185, 129, 0.07));
+  border-color: rgba(110, 231, 183, 0.4);
+}
+.tint-emerald:hover {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.26), rgba(16, 185, 129, 0.12));
+  border-color: rgba(110, 231, 183, 0.6);
+}
+
+.tint-amber {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(245, 158, 11, 0.07));
+  border-color: rgba(252, 211, 77, 0.4);
+}
+.tint-amber:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.26), rgba(245, 158, 11, 0.12));
+  border-color: rgba(252, 211, 77, 0.6);
+}
+
+.tint-rose {
+  background: linear-gradient(135deg, rgba(251, 113, 133, 0.18), rgba(244, 63, 94, 0.07));
+  border-color: rgba(253, 164, 175, 0.4);
+}
+.tint-rose:hover {
+  background: linear-gradient(135deg, rgba(251, 113, 133, 0.26), rgba(244, 63, 94, 0.12));
+  border-color: rgba(253, 164, 175, 0.6);
+}
+
+.tint-violet {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.18), rgba(139, 92, 246, 0.07));
+  border-color: rgba(196, 181, 253, 0.4);
+}
+.tint-violet:hover {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.26), rgba(139, 92, 246, 0.12));
+  border-color: rgba(196, 181, 253, 0.6);
+}
+
+.tint-cyan {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.17), rgba(6, 182, 212, 0.07));
+  border-color: rgba(103, 232, 249, 0.4);
+}
+.tint-cyan:hover {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(6, 182, 212, 0.12));
+  border-color: rgba(103, 232, 249, 0.6);
+}
+
+.tint-teal {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.17), rgba(20, 184, 166, 0.07));
+  border-color: rgba(94, 234, 212, 0.4);
+}
+.tint-teal:hover {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.25), rgba(20, 184, 166, 0.12));
+  border-color: rgba(94, 234, 212, 0.6);
+}
+
+.tint-fuchsia {
+  background: linear-gradient(135deg, rgba(232, 121, 249, 0.17), rgba(217, 70, 239, 0.07));
+  border-color: rgba(240, 171, 252, 0.4);
+}
+.tint-fuchsia:hover {
+  background: linear-gradient(135deg, rgba(232, 121, 249, 0.25), rgba(217, 70, 239, 0.12));
+  border-color: rgba(240, 171, 252, 0.6);
+}
+
+.tint-orange {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.17), rgba(249, 115, 22, 0.07));
+  border-color: rgba(253, 186, 116, 0.4);
+}
+.tint-orange:hover {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.25), rgba(249, 115, 22, 0.12));
+  border-color: rgba(253, 186, 116, 0.6);
+}
