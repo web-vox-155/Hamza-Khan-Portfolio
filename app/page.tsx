@@ -10,7 +10,6 @@ import MagneticButton from "../components/MagneticButton";
 import TypewriterText from "../components/TypewriterText";
 import HeroPhoto from "../components/scenes/HeroPhoto";
 import ScrollButtons from "../components/ScrollButtons";
-import PricingTables from "../components/PricingTables";
 
 export default function Home() {
   return (
@@ -374,9 +373,6 @@ export default function Home() {
             </FadeIn>
           </div>
         </Section>
-
-        {/* ───────── Pricing ───────── */}
-        <PricingTables />
 
         {/* ───────── Contact ───────── */}
         <Section id="contact">
