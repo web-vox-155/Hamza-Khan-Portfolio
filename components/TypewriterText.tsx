@@ -14,7 +14,7 @@ export default function TypewriterText({
   const text = useTypewriter(words, 100, 1800);
 
   return (
-    <span className={className}>
+    <span className={`inline-block whitespace-nowrap align-top ${className}`}>
       {text}
       <span className="inline-block animate-pulse text-white">|</span>
     </span>

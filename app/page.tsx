@@ -33,13 +33,15 @@ export default function Home() {
 
           <FadeIn delay={0.1}>
             <div className="relative mt-8 max-w-5xl">
-              <p className="text-sm uppercase tracking-[0.35em] text-cyan-200/70">
-                <TypewriterText
-                  words={["Full-Stack Developer & UI/UX Designer"]}
-                  className="font-semibold uppercase tracking-[0.35em] text-cyan-200/70"
-                />
-              </p>
-              <h1 className="mt-5 text-5xl font-black leading-[0.98] md:text-7xl lg:text-8xl">
+              <div className="min-h-[1.1rem] overflow-hidden sm:min-h-[1.4rem]">
+                <p className="max-w-full overflow-hidden text-[0.64rem] uppercase tracking-[0.18em] text-cyan-200/70 sm:text-sm sm:tracking-[0.35em]">
+                  <TypewriterText
+                    words={["Full-Stack Developer & UI/UX Designer"]}
+                    className="font-semibold uppercase tracking-[0.18em] text-cyan-200/70 sm:tracking-[0.35em]"
+                  />
+                </p>
+              </div>
+              <h1 className="mt-4 text-4xl font-black leading-[0.9] sm:text-5xl md:mt-5 md:text-7xl lg:text-8xl">
                 <TextReveal lines={["Building modern", "digital experiences"]} />
               </h1>
               <p className="mt-9 max-w-2xl text-lg leading-8 text-zinc-300">
