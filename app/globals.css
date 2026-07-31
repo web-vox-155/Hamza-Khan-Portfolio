@@ -233,6 +233,24 @@ button {
   border-color: rgba(110, 231, 183, 0.6);
 }
 
+/* ── Green table + red border lines + red light glowing outward ── */
+.tint-glow-green {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.24), rgba(16, 185, 129, 0.1));
+  border-color: rgba(244, 63, 94, 0.7);
+  box-shadow:
+    0 0 14px rgba(244, 63, 94, 0.35),
+    0 0 38px rgba(244, 63, 94, 0.18),
+    0 0 70px rgba(244, 63, 94, 0.09);
+}
+.tint-glow-green:hover {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.32), rgba(16, 185, 129, 0.16));
+  border-color: rgba(251, 113, 133, 0.9);
+  box-shadow:
+    0 0 20px rgba(244, 63, 94, 0.5),
+    0 0 60px rgba(244, 63, 94, 0.3),
+    0 0 110px rgba(244, 63, 94, 0.15);
+}
+
 .tint-amber {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(245, 158, 11, 0.07));
   border-color: rgba(252, 211, 77, 0.4);

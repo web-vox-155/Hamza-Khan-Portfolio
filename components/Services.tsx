@@ -7,25 +7,25 @@ const services = [
     num: "01",
     title: "Full-Stack Web Development",
     desc: "End-to-end web applications using Next.js, React, TypeScript, Node.js, and PostgreSQL. From database design to deployment.",
-    tint: "tint-deep-indigo",
+    tint: "tint-glow-green",
   },
   {
     num: "02",
     title: "UI/UX Design & Prototyping",
     desc: "Clean, modern interfaces with Figma-to-code precision. I design experiences that convert — not just look pretty.",
-    tint: "tint-emerald",
+    tint: "tint-glow-green",
   },
   {
     num: "03",
     title: "Performance & SEO Optimization",
     desc: "Core Web Vitals optimization, lazy loading, image optimization, semantic markup, and technical SEO audits.",
-    tint: "tint-neon",
+    tint: "tint-glow-green",
   },
   {
     num: "04",
     title: "Responsive & Accessible Design",
     desc: "Mobile-first, fully responsive layouts that work across all devices and meet WCAG accessibility standards.",
-    tint: "tint-rose",
+    tint: "tint-glow-green",
   },
 ];
 
@@ -47,10 +47,10 @@ export default function Services() {
         </div>
       </FadeIn>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-10 sm:grid-cols-2">
         {services.map((service, i) => (
           <FadeIn key={service.num} delay={i * 0.1}>
-            <div className={`group relative overflow-hidden rounded-3xl ${service.tint} p-7 transition-all duration-500 hover:-translate-y-1`}>
+            <div className={`group relative overflow-hidden rounded-3xl border-2 ${service.tint} p-7 transition-all duration-500 hover:-translate-y-1`}>
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <div
                   className="absolute rounded-full bg-white/5 blur-3xl"
