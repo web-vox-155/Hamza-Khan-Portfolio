@@ -17,7 +17,7 @@ export default function Home() {
       <Background />
       <Navbar />
       <CursorGlow />
-      <main className="relative z-10 min-h-screen bg-transparent text-white pt-24">
+      <main className="relative z-10 min-h-screen overflow-x-clip bg-transparent text-white pt-24">
         <ScrollButtons />
         {/* ───────── Hero ───────── */}
         <section className="relative mx-auto max-w-6xl px-6 py-32">

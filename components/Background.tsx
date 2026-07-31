@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Animated background with ambient light orbs that flow with scroll.
@@ -21,10 +21,20 @@ import { useEffect } from "react";
  */
 export default function Background() {
   const reduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 30, damping: 25, mass: 0.5 });
   const springY = useSpring(mouseY, { stiffness: 30, damping: 25, mass: 0.5 });
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 768px)");
+    const sync = () => setIsMobile(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+
+    return () => media.removeEventListener("change", sync);
+  }, []);
 
   // Scroll-based animation
   const { scrollYProgress } = useScroll();
@@ -61,7 +71,7 @@ export default function Background() {
   const overlayOpacity = useTransform(scrollSmooth, [0, 0.2, 0.8, 1], [0, 0.08, 0.08, 0]);
 
   useEffect(() => {
-    if (reduceMotion || !window.matchMedia("(pointer: fine)").matches) {
+    if (reduceMotion || isMobile || !window.matchMedia("(pointer: fine)").matches) {
       return;
     }
 
@@ -74,12 +84,12 @@ export default function Background() {
 
     window.addEventListener("mousemove", handleMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMove);
-  }, [mouseX, mouseY, reduceMotion]);
+  }, [mouseX, mouseY, reduceMotion, isMobile]);
 
-  if (reduceMotion) {
+  if (reduceMotion || isMobile) {
     return (
       <div className="fixed inset-0 z-0 overflow-hidden bg-[#050505]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(129,92,246,0.18),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.14),transparent_24%),radial-gradient(circle_at_10%_90%,rgba(217,70,239,0.14),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(129,92,246,0.16),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(34,211,238,0.12),transparent_24%),radial-gradient(circle_at_10%_90%,rgba(217,70,239,0.12),transparent_30%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_35%,#050505_92%)]" />
       </div>
     );

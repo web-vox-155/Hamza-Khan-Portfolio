@@ -21,7 +21,10 @@ export default function CursorGlow() {
   const lagY = useSpring(y, { stiffness: 100, damping: 25, mass: 0.3 });
 
   useEffect(() => {
-    if (reduceMotion || !window.matchMedia("(pointer: fine)").matches) {
+    const pointerFine = window.matchMedia("(pointer: fine)");
+    const mobileViewport = window.matchMedia("(max-width: 768px)");
+
+    if (reduceMotion || !pointerFine.matches || mobileViewport.matches) {
       return;
     }
 

@@ -27,11 +27,11 @@ export default function FadeIn({
     <motion.div
       initial={{ opacity: 0, x: offset.x, y: offset.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.7,
-        delay,
-        ease: [0.25, 0.1, 0.25, 1], // smooth cubic bezier
+        duration: 0.45,
+        delay: delay * 0.65,
+        ease: "easeOut",
       }}
     >
       {children}
