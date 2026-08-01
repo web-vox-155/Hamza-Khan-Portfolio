@@ -13,7 +13,7 @@ const services = [
     num: "02",
     title: "UI/UX Design & Prototyping",
     desc: "Clean, modern interfaces with Figma-to-code precision. I design experiences that convert — not just look pretty.",
-    tint: "table-leaf line-amber",
+    tint: "table-leaf line-fuchsia",
   },
   {
     num: "03",
@@ -25,7 +25,7 @@ const services = [
     num: "04",
     title: "Responsive & Accessible Design",
     desc: "Mobile-first, fully responsive layouts that work across all devices and meet WCAG accessibility standards.",
-    tint: "table-leaf line-gold",
+    tint: "table-leaf line-violet",
   },
 ];
 

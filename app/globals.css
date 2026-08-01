@@ -233,27 +233,23 @@ button {
   border-color: rgba(110, 231, 183, 0.6);
 }
 
-/* ── Leafy green premium table (same tint as the ✓ Live badges) ── */
+/* ── Emerald premium table (bright emerald interior) ── */
 .table-leaf {
-  background: linear-gradient(135deg, rgba(110, 231, 183, 0.17), rgba(52, 211, 153, 0.07));
-  border-color: var(--line, rgba(110, 231, 183, 0.5));
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(5, 150, 105, 0.14));
+  border-color: var(--line, rgba(52, 211, 153, 0.5));
   box-shadow: var(--glow, 0 0 12px rgba(52, 211, 153, 0.12));
 }
 .table-leaf:hover {
-  background: linear-gradient(135deg, rgba(110, 231, 183, 0.25), rgba(52, 211, 153, 0.11));
-  border-color: var(--line, rgba(110, 231, 183, 0.7));
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.38), rgba(5, 150, 105, 0.2));
+  border-color: var(--line, rgba(52, 211, 153, 0.7));
   box-shadow: var(--glow, 0 0 20px rgba(52, 211, 153, 0.22));
 }
 
-/* ── Premium border lines — one color per table ── */
-.line-rose     { --line: rgba(251, 113, 133, 0.72);  --glow: 0 0 14px rgba(251, 113, 133, 0.32), 0 0 42px rgba(251, 113, 133, 0.16); }
-.line-amber    { --line: rgba(251, 191, 36, 0.78);   --glow: 0 0 14px rgba(251, 191, 36, 0.32), 0 0 42px rgba(251, 191, 36, 0.16); }
-.line-sky      { --line: rgba(56, 189, 248, 0.72);   --glow: 0 0 14px rgba(56, 189, 248, 0.32), 0 0 42px rgba(56, 189, 248, 0.16); }
-.line-violet   { --line: rgba(167, 139, 250, 0.72);  --glow: 0 0 14px rgba(167, 139, 250, 0.32), 0 0 42px rgba(167, 139, 250, 0.16); }
-.line-cyan     { --line: rgba(34, 211, 238, 0.72);   --glow: 0 0 14px rgba(34, 211, 238, 0.32), 0 0 42px rgba(34, 211, 238, 0.16); }
-.line-fuchsia  { --line: rgba(232, 121, 249, 0.72);  --glow: 0 0 14px rgba(232, 121, 249, 0.32), 0 0 42px rgba(232, 121, 249, 0.16); }
-.line-emerald  { --line: rgba(52, 211, 153, 0.72);   --glow: 0 0 14px rgba(52, 211, 153, 0.32), 0 0 42px rgba(52, 211, 153, 0.16); }
-.line-gold     { --line: rgba(250, 204, 21, 0.8);    --glow: 0 0 14px rgba(250, 204, 21, 0.34), 0 0 42px rgba(250, 204, 21, 0.18); }
+/* ── Premium border lines — rose / fuchsia / cyan / violet only ── */
+.line-rose     { --line: rgba(251, 113, 133, 0.78);  --glow: 0 0 16px rgba(251, 113, 133, 0.38), 0 0 46px rgba(251, 113, 133, 0.18); }
+.line-fuchsia  { --line: rgba(232, 121, 249, 0.78);  --glow: 0 0 16px rgba(232, 121, 249, 0.38), 0 0 46px rgba(232, 121, 249, 0.18); }
+.line-cyan     { --line: rgba(34, 211, 238, 0.78);   --glow: 0 0 16px rgba(34, 211, 238, 0.38), 0 0 46px rgba(34, 211, 238, 0.18); }
+.line-violet   { --line: rgba(167, 139, 250, 0.78);  --glow: 0 0 16px rgba(167, 139, 250, 0.38), 0 0 46px rgba(167, 139, 250, 0.18); }
 
 /* ── Lite neon premium shapes inside tables (pills, badges, checkmarks) ── */
 .shape-neon {
@@ -275,6 +271,38 @@ button {
   border-color: rgba(190, 242, 100, 0.7);
   background-color: rgba(163, 230, 53, 0.12);
   box-shadow: 0 0 12px rgba(163, 230, 53, 0.2);
+}
+
+/* ── Premium content polish ── */
+.heading-premium {
+  background: linear-gradient(120deg, #ffffff 0%, #a7f3d0 45%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.badge-premium {
+  border-color: rgba(163, 230, 53, 0.45);
+  background-color: rgba(163, 230, 53, 0.1);
+  color: #d9f99d;
+  box-shadow: 0 0 12px rgba(163, 230, 53, 0.12);
+}
+.btn-premium {
+  background: linear-gradient(120deg, #34d399, #10b981, #06b6d4);
+  color: #022c22;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+  transition: all 0.3s ease;
+}
+.btn-premium:hover {
+  box-shadow: 0 6px 30px rgba(16, 185, 129, 0.55);
+  transform: translateY(-1px);
+}
+.item-premium {
+  border-color: rgba(16, 185, 129, 0.25);
+  background-color: rgba(2, 44, 34, 0.35);
+}
+.item-premium:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+  background-color: rgba(2, 44, 34, 0.55);
 }
 
 .tint-amber {

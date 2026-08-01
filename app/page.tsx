@@ -45,7 +45,7 @@ export default function Home() {
                 <TextReveal lines={["Building modern", "digital experiences"]} />
               </h1>
               <p className="mt-9 max-w-2xl text-lg leading-8 text-zinc-300">
-                I&apos;m <span className="font-semibold text-white">Hamza Khan</span>.
+                I'm <span className="font-semibold text-white">Hamza Khan</span>.
                 I design and build fast, interactive, and visually polished web
                 applications with clean architecture, responsive design, and
                 exceptional user experience.
@@ -104,10 +104,10 @@ export default function Home() {
                 <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
                   About
                 </p>
-                <h2 className="mt-3 text-4xl font-bold">About Me</h2>
+                <h2 className="heading-premium mt-3 text-4xl font-bold">About Me</h2>
                 <div className="mt-8 space-y-5 text-zinc-300">
                   <p className="leading-8">
-                    I&apos;m <span className="font-semibold text-white">Hamza Khan</span>,
+                    I'm <span className="font-semibold text-white">Hamza Khan</span>,
                     a full-stack developer who designs, builds, and ships complete
                     web applications — not just interfaces, the whole system behind
                     them.
@@ -120,10 +120,10 @@ export default function Home() {
                   </p>
                   <p className="leading-8">
                     I care about the details that separate a demo from a real
-                    product: data that actually persists, auth that&apos;s actually
+                    product: data that actually persists, auth that's actually
                     secure, and interfaces that feel deliberate rather than
                     templated. If you need something built and shipped, not just
-                    mocked up, that&apos;s the work I do.
+                    mocked up, that's the work I do.
                   </p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <div className="rounded-3xl border-2 table-leaf line-sky p-6">
+                <div className="rounded-3xl border-2 table-leaf line-fuchsia p-6">
                   <h3 className="text-xl font-semibold">Backend & Tools</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
                     {[
@@ -181,7 +181,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <div className="rounded-3xl border-2 table-leaf line-emerald p-6">
+                <div className="rounded-3xl border-2 table-leaf line-cyan p-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-semibold">Recently Shipped</h3>
                     <span className="rounded-full shape-neon px-3 py-1 text-xs">
@@ -196,7 +196,7 @@ export default function Home() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-center gap-3 rounded-2xl border border-zinc-800 bg-black/20 px-4 py-3"
+                        className="item-premium flex items-center gap-3 rounded-2xl border px-4 py-3"
                       >
                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full shape-neon-check text-xs">
                           ✓
@@ -224,7 +224,7 @@ export default function Home() {
                 <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
                   Portfolio
                 </p>
-                <h2 className="mt-3 text-4xl font-bold">Featured Projects</h2>
+                <h2 className="heading-premium mt-3 text-4xl font-bold">Featured Projects</h2>
               </div>
               <p className="max-w-md text-sm leading-6 text-zinc-400">
                 Real-world applications demonstrating full-stack capabilities,
@@ -236,7 +236,7 @@ export default function Home() {
           <div className="mt-14 grid gap-10 lg:grid-cols-3">
             {/* ── Project 1 ── */}
             <FadeIn delay={0.1}>
-              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-gold p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-violet p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -328,7 +328,7 @@ export default function Home() {
 
             {/* ── Project 3 ── */}
             <FadeIn delay={0.3}>
-              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-amber p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-cyan p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -383,10 +383,10 @@ export default function Home() {
                   <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
                     Get in Touch
                   </p>
-                  <h2 className="mt-3 text-4xl font-bold">Let&apos;s Work Together</h2>
+                  <h2 className="heading-premium mt-3 text-4xl font-bold">Let's Work Together</h2>
                   <p className="mt-4 max-w-md leading-7 text-zinc-400">
-                    Have a project in mind? I&apos;m currently accepting freelance
-                    opportunities. Send me a message and let&apos;s discuss how I can
+                    Have a project in mind? I'm currently accepting freelance
+                    opportunities. Send me a message and let's discuss how I can
                     help bring your vision to life.
                   </p>
 
@@ -481,7 +481,7 @@ export default function Home() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-indigo-300 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-indigo-200"
+                    className="btn-premium w-full rounded-xl px-6 py-3.5 text-sm font-semibold"
                   >
                     Send Message
                   </button>
