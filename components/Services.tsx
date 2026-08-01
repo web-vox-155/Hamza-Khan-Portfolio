@@ -7,25 +7,25 @@ const services = [
     num: "01",
     title: "Full-Stack Web Development",
     desc: "End-to-end web applications using Next.js, React, TypeScript, Node.js, and PostgreSQL. From database design to deployment.",
-    tint: "tint-glow-green",
+    tint: "table-leaf line-cyan",
   },
   {
     num: "02",
     title: "UI/UX Design & Prototyping",
     desc: "Clean, modern interfaces with Figma-to-code precision. I design experiences that convert — not just look pretty.",
-    tint: "tint-glow-green",
+    tint: "table-leaf line-amber",
   },
   {
     num: "03",
     title: "Performance & SEO Optimization",
     desc: "Core Web Vitals optimization, lazy loading, image optimization, semantic markup, and technical SEO audits.",
-    tint: "tint-glow-green",
+    tint: "table-leaf line-rose",
   },
   {
     num: "04",
     title: "Responsive & Accessible Design",
     desc: "Mobile-first, fully responsive layouts that work across all devices and meet WCAG accessibility standards.",
-    tint: "tint-glow-green",
+    tint: "table-leaf line-gold",
   },
 ];
 

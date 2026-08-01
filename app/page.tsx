@@ -131,7 +131,7 @@ export default function Home() {
 
             <div className="space-y-8">
               <FadeIn direction="right" delay={0.1}>
-                <div className="rounded-3xl border-2 tint-glow-green p-6">
+                <div className="rounded-3xl border-2 table-leaf line-rose p-6">
                   <h3 className="text-xl font-semibold">Frontend</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
                     {[
@@ -146,7 +146,7 @@ export default function Home() {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border border-zinc-700 px-4 py-1.5 text-sm text-zinc-200"
+                        className="rounded-full shape-neon px-4 py-1.5 text-sm"
                       >
                         {skill}
                       </span>
@@ -156,7 +156,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <div className="rounded-3xl border-2 tint-glow-green p-6">
+                <div className="rounded-3xl border-2 table-leaf line-sky p-6">
                   <h3 className="text-xl font-semibold">Backend & Tools</h3>
                   <div className="mt-5 flex flex-wrap gap-2.5">
                     {[
@@ -171,7 +171,7 @@ export default function Home() {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-full border border-zinc-700 px-4 py-1.5 text-sm text-zinc-200"
+                        className="rounded-full shape-neon px-4 py-1.5 text-sm"
                       >
                         {skill}
                       </span>
@@ -181,10 +181,10 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <div className="rounded-3xl border-2 tint-glow-green p-6">
+                <div className="rounded-3xl border-2 table-leaf line-emerald p-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-semibold">Recently Shipped</h3>
-                    <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+                    <span className="rounded-full shape-neon px-3 py-1 text-xs">
                       Live
                     </span>
                   </div>
@@ -198,7 +198,7 @@ export default function Home() {
                         key={item}
                         className="flex items-center gap-3 rounded-2xl border border-zinc-800 bg-black/20 px-4 py-3"
                       >
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-xs text-emerald-300">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full shape-neon-check text-xs">
                           ✓
                         </span>
                         <span className="text-sm text-zinc-200">{item}</span>
@@ -236,7 +236,7 @@ export default function Home() {
           <div className="mt-14 grid gap-10 lg:grid-cols-3">
             {/* ── Project 1 ── */}
             <FadeIn delay={0.1}>
-              <article className="group relative overflow-hidden rounded-3xl border-2 tint-glow-green p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-gold p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -267,7 +267,7 @@ export default function Home() {
                     (tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300"
+                        className="rounded-full shape-neon px-3 py-1 text-xs"
                       >
                         {tech}
                       </span>
@@ -282,7 +282,7 @@ export default function Home() {
 
             {/* ── Project 2 ── */}
             <FadeIn delay={0.2}>
-              <article className="group relative overflow-hidden rounded-3xl border-2 tint-glow-green p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-fuchsia p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -313,7 +313,7 @@ export default function Home() {
                     (tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300"
+                        className="rounded-full shape-neon px-3 py-1 text-xs"
                       >
                         {tech}
                       </span>
@@ -328,7 +328,7 @@ export default function Home() {
 
             {/* ── Project 3 ── */}
             <FadeIn delay={0.3}>
-              <article className="group relative overflow-hidden rounded-3xl border-2 tint-glow-green p-6 transition-all duration-500 hover:-translate-y-2">
+              <article className="group relative overflow-hidden rounded-3xl border-2 table-leaf line-amber p-6 transition-all duration-500 hover:-translate-y-2">
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div
                     className="absolute rounded-full bg-white/10 blur-3xl"
@@ -359,7 +359,7 @@ export default function Home() {
                     (tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300"
+                        className="rounded-full shape-neon px-3 py-1 text-xs"
                       >
                         {tech}
                       </span>
@@ -377,7 +377,7 @@ export default function Home() {
         {/* ───────── Contact ───────── */}
         <Section id="contact">
           <FadeIn direction="right">
-            <div className="rounded-3xl border-2 tint-glow-green p-8 sm:p-12">
+            <div className="rounded-3xl border-2 table-leaf line-violet p-8 sm:p-12">
               <div className="grid gap-12 lg:grid-cols-2">
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
@@ -395,7 +395,7 @@ export default function Home() {
                       href="mailto:ainature155@gmail.com"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
-                      <span className="rounded-lg border border-zinc-700 p-2 text-sm">✉</span>
+                      <span className="rounded-lg shape-neon p-2 text-sm">✉</span>
                       ainature155@gmail.com
                     </a>
                     <a
@@ -404,7 +404,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
-                      <span className="rounded-lg border border-zinc-700 p-2 text-sm">⌘</span>
+                      <span className="rounded-lg shape-neon p-2 text-sm">⌘</span>
                       github.com/web-vox-155
                     </a>
                     <a
@@ -413,7 +413,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="flex items-center gap-3 text-zinc-300 transition hover:text-white"
                     >
-                      <span className="rounded-lg border border-zinc-700 p-2 text-sm">in</span>
+                      <span className="rounded-lg shape-neon p-2 text-sm">in</span>
                       linkedin.com/in/hamza-khan
                     </a>
                   </div>
@@ -435,7 +435,7 @@ export default function Home() {
                         id="name"
                         name="name"
                         required
-                        className="w-full rounded-xl border border-zinc-800 bg-black/30 px-4 py-3 text-sm text-white outline-none transition focus:border-zinc-600 focus:bg-black/50"
+                        className="input-neon w-full rounded-xl border px-4 py-3 text-sm text-white outline-none transition"
                         placeholder="Your name"
                       />
                     </div>
@@ -448,7 +448,7 @@ export default function Home() {
                         id="email"
                         name="email"
                         required
-                        className="w-full rounded-xl border border-zinc-800 bg-black/30 px-4 py-3 text-sm text-white outline-none transition focus:border-zinc-600 focus:bg-black/50"
+                        className="input-neon w-full rounded-xl border px-4 py-3 text-sm text-white outline-none transition"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -462,7 +462,7 @@ export default function Home() {
                       id="subject"
                       name="subject"
                       required
-                      className="w-full rounded-xl border border-zinc-800 bg-black/30 px-4 py-3 text-sm text-white outline-none transition focus:border-zinc-600 focus:bg-black/50"
+                      className="input-neon w-full rounded-xl border px-4 py-3 text-sm text-white outline-none transition"
                       placeholder="Project inquiry"
                     />
                   </div>
@@ -475,7 +475,7 @@ export default function Home() {
                       name="message"
                       rows={5}
                       required
-                      className="w-full resize-none rounded-xl border border-zinc-800 bg-black/30 px-4 py-3 text-sm text-white outline-none transition focus:border-zinc-600 focus:bg-black/50"
+                      className="input-neon w-full resize-none rounded-xl border px-4 py-3 text-sm text-white outline-none transition"
                       placeholder="Tell me about your project..."
                     />
                   </div>
