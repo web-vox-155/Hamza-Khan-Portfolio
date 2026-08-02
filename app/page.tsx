@@ -250,20 +250,23 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex items-center justify-between relative z-10">
-                  <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs uppercase tracking-wider text-zinc-300">
-                    In Development
+                  <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs uppercase tracking-wider text-emerald-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Live
                   </span>
                   <span className="text-sm text-zinc-500">01</span>
                 </div>
                 <h3 className="mt-6 text-2xl font-bold relative z-10">
-                  AI Productivity Platform
+                  ZenFlow — AI Productivity Platform
                 </h3>
                 <p className="mt-4 leading-7 text-zinc-400 relative z-10">
-                  Full-stack application with AI-assisted workflows, notes,
-                  tasks, auth, search, and a modern dashboard interface.
+                  A full-stack productivity dashboard with real authentication,
+                  a live PostgreSQL database, Notes and Tasks with
+                  drag-and-drop reordering, and an AI chat panel — designed,
+                  built, and deployed end to end.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2 relative z-10">
-                  {["Next.js", "TypeScript", "Node.js", "PostgreSQL"].map(
+                  {["Next.js", "TypeScript", "NextAuth", "Prisma", "PostgreSQL"].map(
                     (tech) => (
                       <span
                         key={tech}
@@ -274,8 +277,16 @@ export default function Home() {
                     )
                   )}
                 </div>
-                <div className="mt-8 flex items-center gap-4 text-sm font-semibold relative z-10">
-                  <span className="text-zinc-500">Coming Soon</span>
+                <div className="mt-8 flex items-center gap-2 text-sm font-semibold relative z-10">
+                  <a
+                    href="https://zenflow-part1.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-emerald-300 transition hover:text-emerald-200"
+                  >
+                    View Live Project
+                    <span aria-hidden="true">→</span>
+                  </a>
                 </div>
               </article>
             </FadeIn>
